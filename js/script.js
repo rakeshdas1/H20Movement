@@ -15,14 +15,28 @@ var circle = new Path.Circle({
 linePath.add(beginningPoint);
 linePath.strokeWidth = 10;
 linePath.strokeColor = red;*/
-var myPath = new Path();
-myPath.strokeWidth = 10;
-myPath.strokeColor = 'black';
-myPath.add(new Point(0, 0), new Point(100, 50));
+var line1 = new Path();
+line1.strokeWidth = 10;
+line1.strokeColor = 'black';
+line1.add(new Point(452, 70), new Point(273, 185));
+var line2 = new Path();
+line2.strokeWidth = 10;
+line2.strokeColor='black';
+line2.add(new Point(452, 70), new Point(578, 185));
+var circleOxy = new Path.Circle(new Point (452, 74), 50);
+circleOxy.fillColor = 'red';
+var circleHydro1 = new Path.Circle(new Point(273,185), 50);
+circleHydro1.fillColor = 'blue';
+var circleHydro2 = new Path.Circle(new Point(578,185), 50);
+circleHydro2.fillColor = 'blue'
+
+
 
 function onResize(event) {
-    path.position = view.center;
+    circle.position = view.center;
 }
 function onMouseDrag(event) {
     circle.position = event.point;
+    /*circleHydro.position = event.point*/;        document.getElementById("coords").innerHTML=event.point
 }
+
